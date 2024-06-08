@@ -7,7 +7,7 @@
         <path
           d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
       </svg>
-      <h1>{{ averageRating }}</h1>
+      <h1>{{ roundedAverageRating }}</h1>
     </div>
     <button @click="openModal"
       class="select-none bg-transparent hover:bg-purple-500 text-purple-700 font-semibold hover:text-white py-2 px-4 border border-purple-500 hover:border-transparent rounded">
@@ -35,6 +35,11 @@ export default {
       averageRating: 0,
       showModal: false
     };
+  },
+  computed: {
+    roundedAverageRating() {
+      return this.averageRating.toFixed(2);
+    }
   },
   methods: {
     openModal() {
