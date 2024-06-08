@@ -1,24 +1,34 @@
 # se-technical-assessment-vue
 
 ## Project setup
+Create a `.env` file. Please look at the `.env.example` and adjust the API base URL.
+
+### Build and run the app with Docker Compose
+
 ```
-yarn install
+docker compose build
+docker compose up -d
 ```
 
-### Compiles and hot-reloads for development
+### Build a development server
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## Project structure
 
-### Lints and fixes files
+Here's the structure of the project. All components are inside the `/components/` directory. `/services/` handles the connection to the API. 
 ```
-yarn lint
+└── src
+    ├── App.vue
+    ├── assets
+    │   ├── logo.png
+    │   └── tailwind.css
+    ├── components
+    │   ├── FeedbackForm.vue
+    │   ├── FeedbackModal.vue
+    │   └── StarRating.vue
+    ├── main.js
+    └── services
+        └── apiService.js
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
