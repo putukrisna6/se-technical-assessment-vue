@@ -13,7 +13,7 @@
       class="select-none bg-transparent hover:bg-purple-500 text-purple-700 font-semibold hover:text-white py-2 px-4 border border-purple-500 hover:border-transparent rounded">
       Rate
     </button>
-    <FeedbackModal v-if="showModal" @close="closeModal" />
+    <FeedbackModal v-if="showModal" @close="closeModal" @status="handleStatus" />
   </div>
 </template>
 
@@ -47,6 +47,9 @@ export default {
     },
     closeModal() {
       this.showModal = false;
+    },
+    handleStatus() {
+      this.getAverageRating();
     },
     async getAverageRating() {
       try {
