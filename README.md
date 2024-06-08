@@ -1,6 +1,7 @@
 # se-technical-assessment-vue
 
 ## Project setup
+
 Create a `.env` file. Please look at the `.env.example` and adjust the API base URL.
 
 ### Build and run the app with Docker Compose
@@ -32,3 +33,7 @@ Here's the structure of the project. All components are inside the `/components/
     └── services
         └── apiService.js
 ```
+
+## Library versions
+
+The project was built using Vue CLI on Node v18.19.1.
