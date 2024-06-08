@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      error: false
+      status: true
     }
   },
   methods: {
@@ -35,7 +35,9 @@ export default {
       try {
         await api.postFeedback({ score: i });
       } catch (error) {
-        this.error = true;
+        this.status = false;
+      } finally {
+        this.$emit('status', this.status);
       }
     }
   }
