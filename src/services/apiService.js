@@ -10,20 +10,12 @@ const apiService = axios.create({
 
 const api = {
   async getFeedbacks() {
-    try {
-      const response = await apiService.get("/feedbacks");
-      return response.data;
-    } catch (error) {
-      return { error: true, message: error.message };
-    }
+    const response = await apiService.get("/feedbacks");
+    return response.data;
   },
   async postFeedback(data) {
-    try {
-      const response = await apiService.post("/feedbacks", data);
-      return response.data;
-    } catch (error) {
-      return { error: true, message: error.message };
-    }
+    const response = await apiService.post("/feedbacks", data);
+    return response.data;
   }
 };
 
