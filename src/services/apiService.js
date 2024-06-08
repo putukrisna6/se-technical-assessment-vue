@@ -17,6 +17,14 @@ const api = {
       return { error: true, message: error.message };
     }
   },
+  async postFeedback(data) {
+    try {
+      const response = await apiService.post("/feedbacks", data);
+      return response.data;
+    } catch (error) {
+      return { error: true, message: error.message };
+    }
+  }
 };
 
 export default api;

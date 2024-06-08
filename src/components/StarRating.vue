@@ -16,14 +16,27 @@
 </template>
 
 <script>
+import api from '@/services/apiService';
+
 export default {
   name: "StarRating",
   props: {
     value: Number,
   },
+  data() {
+    return {
+      error: false
+    }
+  },
   methods: {
-    handleClick(i) {
+    async handleClick(i) {
       this.$emit('input', i);
+
+      try {
+        await api.postFeedback({ score: i });
+      } catch (error) {
+        this.error = true;
+      }
     }
   }
 };
