@@ -31,8 +31,9 @@ export default {
         this.$emit('close');
       }
     },
-    handleStatus(error) {
-      this.status = error;
+    handleStatus(status) {
+      this.status = status;
+      this.$emit('status', status);
     },
   },
   components: {
