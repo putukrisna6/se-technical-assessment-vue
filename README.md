@@ -13,6 +13,7 @@ docker compose up -d
 
 ### Build a development server
 ```
+yarn install
 yarn serve
 ```
 
